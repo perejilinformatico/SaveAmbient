@@ -5,6 +5,7 @@ import styled from './lib/styled'
 const storageKey = 'saveambient-user-started'
 
 const retosAmbientales = [
+  'Unete a un grupo de Telegram o WhatsApp que cuide el medio ambiente',
   'Crea con una botella de plastico y algun granulo, una maraca.',
   'Crea con una botella de plastico y algodon, un ojo de pescado.',
   'Crea con una caja de carton algo divertido.',
@@ -93,6 +94,100 @@ const retosAmbientales = [
   'Hace una escultura pequena con residuos limpios.',
   'Crea un calendario de retos ambientales para siete dias.',
   'Transforma un envase en una cajita para guardar botones o monedas.',
+  'Crea una corona con hojas caidas y carton reutilizado.',
+  'Arma una estacion de carga para celulares con una caja vieja.',
+  'Hace un robot con tapitas, cajas y tubos de carton.',
+  'Convierte una botella en un atrapa-lapices para tu escritorio.',
+  'Crea una historieta corta donde el planeta sea el protagonista.',
+  'Diseña una bandera ambiental con papel reutilizado.',
+  'Hace un marcador de paginas con un envase de carton.',
+  'Arma un mini museo de objetos reciclados en una mesa.',
+  'Crea una ruleta de retos ambientales con carton y un broche.',
+  'Transforma una botella chica en un sonajero para jugar.',
+  'Hace una flor con tapitas y palitos reutilizados.',
+  'Crea una ciudad miniatura usando cajas de remedios o alimentos.',
+  'Arma una torre con materiales reciclados y sacale una foto.',
+  'Hace un marco para fotos con carton y recortes limpios.',
+  'Convierte una lata en un portalapices con papel reutilizado.',
+  'Crea una mascara divertida con carton antes de tirarlo.',
+  'Diseña stickers caseros con frases para cuidar el ambiente.',
+  'Hace un dado de retos ambientales con una caja pequena.',
+  'Arma un bingo ambiental para jugar con familia o amigos.',
+  'Crea una trivia de cinco preguntas sobre reciclaje.',
+  'Hace una entrevista corta a alguien sobre como cuida el planeta.',
+  'Graba un audio de diez segundos contando un consejo ambiental.',
+  'Crea un slogan ambiental y pegalo cerca de tu mochila.',
+  'Hace un dibujo de tu barrio con mas arboles y menos basura.',
+  'Inventate un superheroe ambiental y dibuja su poder.',
+  'Arma una capsula del tiempo con una promesa ambiental.',
+  'Crea una tarjeta de agradecimiento para alguien que recicla.',
+  'Hace una cadena de papel con compromisos ambientales.',
+  'Transforma una caja en un cofre para guardar reciclables pequenos.',
+  'Crea un semaforo ambiental: verde, amarillo y rojo para tus habitos.',
+  'Hace una lista de objetos que podrias pedir prestados en vez de comprar.',
+  'Arma una zona sin plastico por una tarde en tu casa.',
+  'Cambia un snack con paquete por una fruta o comida casera.',
+  'Prepara agua saborizada casera para evitar una bebida embotellada.',
+  'Crea un menu de un dia usando comida que ya haya en casa.',
+  'Hace una revision express de la basura y busca que se puede reducir.',
+  'Guarda un envase lindo para usarlo como organizador.',
+  'Arma un rincon verde con una planta, semilla o brote.',
+  'Crea un cartel para recordar usar ambos lados del papel.',
+  'Hace una competencia sana: quien junta mas reciclables limpios.',
+  'Inventate una regla de oro ambiental para tu semana.',
+  'Crea un nombre divertido para tu botella reutilizable.',
+  'Decora tu bolsa reutilizable para que te den ganas de llevarla.',
+  'Hace una caminata sin auriculares y escucha los sonidos de la naturaleza.',
+  'Busca sombra natural antes de prender ventilador o aire.',
+  'Abri cortinas y aprovecha luz natural durante una hora.',
+  'Ordena tus reciclables por color como si fuera un juego.',
+  'Crea una mision secreta: evitar tres plasticos en un dia.',
+  'Hace un mapa de puntos verdes de tu barrio.',
+  'Busca donde llevar pilas, aceite usado o electronicos cerca de casa.',
+  'Crea una caja de donacion con ropa, juguetes o utiles que ya no uses.',
+  'Transforma una botella grande en una pala para macetas.',
+  'Hace una mini regadera con una botella y usala una vez.',
+  'Crea una maceta colgante con una botella resistente.',
+  'Arma un cartel para tu planta con su nombre y cuidados.',
+  'Hace un experimento: mide cuanta basura generas en una tarde.',
+  'Crea una promesa ambiental de una sola frase y cumplila hoy.',
+  'Dibuja tres formas de usar menos agua en casa.',
+  'Hace una limpieza digital: borra fotos repetidas o archivos pesados.',
+  'Apaga notificaciones por una hora para usar menos pantalla.',
+  'Carga el celular solo hasta lo necesario y desenchufa el cargador.',
+  'Revisa si podes reutilizar una bolsa antes de buscar otra.',
+  'Crea un kit de salida: botella, bolsa y servilleta reutilizable.',
+  'Hace una busqueda de tesoro: encontra cinco cosas reutilizables.',
+  'Arma un mini taller para reparar algo chiquito.',
+  'Crea un premio casero para quien complete un reto ambiental.',
+  'Hace una lista de deseos sin comprar nada nuevo esta semana.',
+  'Transforma una caja en un teatro de sombras.',
+  'Crea personajes con corchos, tapitas o rollos de carton.',
+  'Hace un instrumento con materiales reutilizados y proba su sonido.',
+  'Arma un juego de bolos con botellas vacias.',
+  'Crea una pista de autos con carton reciclado.',
+  'Hace una obra de arte usando solo residuos limpios.',
+  'Convierte diarios o revistas viejas en papel para envolver.',
+  'Crea una guirnalda con papel usado de ambos lados.',
+  'Hace una mini biblioteca de intercambio con libros que ya leiste.',
+  'Arma una caja de trueque para amigos o familia.',
+  'Crea un ranking casero de acciones ambientales de la semana.',
+  'Hace un cartel que diga: antes de tirar, pensa si se reutiliza.',
+  'Transforma una caja pequena en un buzón de ideas ambientales.',
+  'Crea una mision de silencio: diez minutos sin aparatos encendidos.',
+  'Hace una tarde sin compras impulsivas.',
+  'Busca una forma creativa de reutilizar una bolsa rota.',
+  'Crea una lupa de carton para mirar detalles de hojas caidas.',
+  'Hace una coleccion de texturas naturales sin arrancar plantas.',
+  'Arma una mini exposicion con cosas hechas de reciclaje.',
+  'Crea un reto doble: ahorrar agua y luz en la misma tarde.',
+  'Hace un dibujo antes y despues de un lugar mas limpio.',
+  'Inventate una palabra nueva para un habito ambiental.',
+  'Crea una postal ambiental para regalar sin comprar nada.',
+  'Transforma una caja en organizador para reciclaje escolar.',
+  'Hace un cartel de bienvenida para tu rincon de reciclaje.',
+  'Arma un contador de dias sin botellas descartables.',
+  'Crea una mision: que nada reciclable termine en basura comun hoy.',
 ]
 
 function App() {
@@ -127,6 +222,10 @@ function App() {
     }, 650)
   }
 
+  const handleCafe = () => {
+    alert('Alias: santiago.395.tour.mp')
+  }
+
   return (
     <Page>
       {usuarioTocoBoton ? (
@@ -134,13 +233,16 @@ function App() {
           <Logo src="/favicon.png" alt="Logo SaveAmbient" />
           <Eyebrow>Tu reto ambiental de hoy</Eyebrow>
           <Reto>{retoDelDia}</Reto>
+          <CafeButton type="button" onClick={handleCafe}>
+            Se acepta Cafécito ☕
+          </CafeButton>
         </Principio>
       ) : (
         <Inicio $seDesvanece={seDesvanece}>
           <Logo src="/favicon.png" alt="Logo SaveAmbient" />
           <Frase>Hoy el planeta necesita menos plastico.</Frase>
           <VerMasButton type="button" onClick={handleVerMas}>
-            VER MAS
+            ENTRAR
           </VerMasButton>
         </Inicio>
       )}
@@ -228,4 +330,21 @@ const VerMasButton = styled.button`
   letter-spacing: 0.18em;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
   box-shadow: 0 12px 28px rgb(34 197 94 / 25%);
+`
+
+const CafeButton = styled.button`
+  min-width: 156px;
+  min-height: 56px;
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 28px;
+  background: #8b4513;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 12px 28px rgb(139 69 19 / 25%);
 `
