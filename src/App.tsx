@@ -190,6 +190,24 @@ const retosAmbientales = [
   'Hace un cartel de bienvenida para tu rincon de reciclaje.',
   'Arma un contador de dias sin botellas descartables.',
   'Crea una mision: que nada reciclable termine en basura comun hoy.',
+  'Crea un juego de preguntas sobre el reciclaje con tu familia o amigos.',
+  'Crea un video corto contando por que reciclar es importante.',
+  'Crear un podcast casero sobre el reciclaje.',
+  'Transformar una botella, carton o otro material reciclable en un objeto de uso cotidiano',
+  'Crear un mural con consejos de reciclaje para la casa, con materiables reciclados',
+  'Crear un juego de cartas con materiales reciclables y ganar en el mismo',
+  'Crear un silvato con un popote reciclable',
+  'Crear un juego de mesa con materiales reciclables',
+  'Crear una mini ciudad con materiales reciclables',
+  'Crear una maqueta de un edificio sostenible con materiales reciclables',
+  'Crear una maqueta de un vehiculo electrico con materiales reciclables',
+  'Crear una maqueta de un parque eolico con materiales reciclables',
+  'Crear una maqueta de un parque solar con materiales reciclables',
+  'Jugar a un videojuego ambiental',
+  'Hacer una actividad de manualidades con materiales reciclables',
+  'Hacer una maseta para las plantas con materiables reciclables',
+  'Regar las plantas que aun no allas regado hoy',
+  'Dormir con las luces apagadas por la noche'
 ]
 
 function App() {
