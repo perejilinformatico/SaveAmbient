@@ -253,9 +253,6 @@ function App() {
         <Overlay role="dialog" aria-modal="true" aria-label="Menu de usuario">
           <OverlayHeader>
             <OverlayTitle>Usuario</OverlayTitle>
-            <CloseButton type="button" onClick={() => setMenuAbierto(false)}>
-              Cerrar
-            </CloseButton>
           </OverlayHeader>
 
           <Field>
