@@ -241,6 +241,10 @@ function App() {
     localStorage.setItem(usernameStorageKey, nombreUsuario)
   }, [nombreUsuario])
 
+  useEffect(() => {
+    if (!usuarioTocoBoton) setMenuAbierto(false)
+  }, [usuarioTocoBoton])
+
   const handleVerMas = () => {
     setSeDesvanece(true)
 
@@ -255,47 +259,49 @@ function App() {
   }
   return (
     <Page>
-      <TopRight>
-        <IconButton
-          type="button"
-          aria-label="Abrir menu de usuario"
-          onClick={() => setMenuAbierto(true)}
-          style={{ display: menuAbierto ? 'none' : 'flex' }}
-        >
-          <User size={20}/>
-        </IconButton>
-        <OverlayTitle style={{ display: menuAbierto ? 'none' : 'flex'}}>{nombreUsuario}</OverlayTitle>
-      </TopRight>
-
-      {menuAbierto ? (
-        <Overlay role="dialog" aria-modal="true" aria-label="Menu de usuario">
-          <OverlayHeader>
-            <OverlayTitle>Usuario</OverlayTitle>
-          </OverlayHeader>
-
-          <Field>
-            <Label>Nombre</Label>
-            <Input
-              value={nombreUsuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => setNombreUsuario(e.target.value)}
-              placeholder="Tu nombre"
-            />
-            <Button type="submit" onClick={() => setMenuAbierto(false)}> 
-              Guardar
-            </Button>
-          </Field>
-        </Overlay>
-      ) : null}
-
       {usuarioTocoBoton ? (
-        <Principio $mostrar={mostrarReto}>
-          <Logo src="/favicon.png" alt="Logo SaveAmbient" />
-          <Eyebrow>Tu reto ambiental de hoy</Eyebrow>
-          <Reto>{retoDelDia}</Reto>
-          <CafeButton type="button" onClick={handleCafe}>
-            Se acepta Cafécito ☕
-          </CafeButton>
-        </Principio>
+        <>
+          <TopRight>
+            <IconButton
+              type="button"
+              aria-label="Abrir menu de usuario"
+              onClick={() => setMenuAbierto(true)}
+            >
+              <User size={20} />
+            </IconButton>
+          </TopRight>
+
+          {menuAbierto ? (
+            <Overlay role="dialog" aria-modal="true" aria-label="Menu de usuario">
+              <OverlayHeader>
+                <OverlayTitle>Usuario</OverlayTitle>
+              </OverlayHeader>
+
+              <Field>
+                <Label>Nombre</Label>
+                <Input
+                  value={nombreUsuario}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setNombreUsuario(e.target.value)
+                  }
+                  placeholder="Tu nombre"
+                />
+                <Button type="button" onClick={() => setMenuAbierto(false)}>
+                  Guardar
+                </Button>
+              </Field>
+            </Overlay>
+          ) : null}
+
+          <Principio $mostrar={mostrarReto}>
+            <Logo src="/favicon.png" alt="Logo SaveAmbient" />
+            <Eyebrow>Tu reto ambiental de hoy</Eyebrow>
+            <Reto>{retoDelDia}</Reto>
+            <CafeButton type="button" onClick={handleCafe}>
+              Se acepta Cafecito
+            </CafeButton>
+          </Principio>
+        </>
       ) : (
         <Inicio $seDesvanece={seDesvanece}>
           <Logo src="/favicon.png" alt="Logo SaveAmbient" />
