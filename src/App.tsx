@@ -373,15 +373,6 @@ const OverlayTitle = styled.p`
   font-size: 1.1rem;
 `
 
-const CloseButton = styled.button`
-  border: 0;
-  background: transparent;
-  color: #12332c;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 700;
-`
-
 const Field = styled.div`
   width: min(100%, 520px);
   display: flex;
