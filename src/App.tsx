@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { type ChangeEvent, useEffect, useMemo, useState } from 'react'
 import './App.css'
 import styled from './lib/styled'
+import { User } from 'lucide-react'
 
 const storageKey = 'saveambient-user-started'
+const usernameStorageKey = 'saveambient-username'
 
 const retosAmbientales = [
   'Unete a un grupo de Telegram o WhatsApp que cuide el medio ambiente',
@@ -196,6 +198,10 @@ function App() {
   )
   const [seDesvanece, setSeDesvanece] = useState(false)
   const [mostrarReto, setMostrarReto] = useState(false)
+  const [menuAbierto, setMenuAbierto] = useState(false)
+  const [nombreUsuario, setNombreUsuario] = useState(
+    () => localStorage.getItem(usernameStorageKey) || 'Usuario',
+  )
 
   const retoDelDia = useMemo(() => {
     const posicionAleatoria = Math.floor(Math.random() * retosAmbientales.length)
@@ -213,6 +219,10 @@ function App() {
     setMostrarReto(false)
   }, [usuarioTocoBoton])
 
+  useEffect(() => {
+    localStorage.setItem(usernameStorageKey, nombreUsuario)
+  }, [nombreUsuario])
+
   const handleVerMas = () => {
     setSeDesvanece(true)
 
@@ -225,9 +235,43 @@ function App() {
   const handleCafe = () => {
     alert('Alias: santiago.395.tour.mp')
   }
-
   return (
     <Page>
+      <TopRight>
+        <IconButton
+          type="button"
+          aria-label="Abrir menu de usuario"
+          onClick={() => setMenuAbierto(true)}
+          style={{ display: menuAbierto ? 'none' : 'flex' }}
+        >
+          <User size={20}/>
+        </IconButton>
+        <OverlayTitle style={{ display: menuAbierto ? 'none' : 'flex'}}>{nombreUsuario}</OverlayTitle>
+      </TopRight>
+
+      {menuAbierto ? (
+        <Overlay role="dialog" aria-modal="true" aria-label="Menu de usuario">
+          <OverlayHeader>
+            <OverlayTitle>Usuario</OverlayTitle>
+            <CloseButton type="button" onClick={() => setMenuAbierto(false)}>
+              Cerrar
+            </CloseButton>
+          </OverlayHeader>
+
+          <Field>
+            <Label>Nombre</Label>
+            <Input
+              value={nombreUsuario}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setNombreUsuario(e.target.value)}
+              placeholder="Tu nombre"
+            />
+            <Button type="submit" onClick={() => setMenuAbierto(false)}> 
+              Guardar
+            </Button>
+          </Field>
+        </Overlay>
+      ) : null}
+
       {usuarioTocoBoton ? (
         <Principio $mostrar={mostrarReto}>
           <Logo src="/favicon.png" alt="Logo SaveAmbient" />
@@ -259,6 +303,91 @@ const Page = styled.main`
   justify-content: center;
   padding: 24px;
   background: #f8fff3;
+  color: #12332c;
+  position: relative;
+`
+
+const TopRight = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`
+
+const IconButton = styled.button`
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: rgb(255 255 255 / 80%);
+  color: #12332c;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgb(18 51 44 / 12%);
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8fff3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 50;
+`
+
+const OverlayHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+`
+
+const OverlayTitle = styled.p`
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+`
+
+const CloseButton = styled.button`
+  border: 0;
+  background: transparent;
+  color: #12332c;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+`
+
+const Field = styled.div`
+  width: min(100%, 520px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`
+
+const Label = styled.p`
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+`
+
+const Input = styled.input`
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgb(18 51 44 / 20%);
+  padding: 0 12px;
+  font: inherit;
+  background: white;
   color: #12332c;
 `
 
@@ -347,4 +476,21 @@ const CafeButton = styled.button`
   letter-spacing: 0.18em;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
   box-shadow: 0 12px 28px rgb(139 69 19 / 25%);
+`
+const Button = styled.button`
+  min-width: 156px;
+  min-height: 56px;
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 28px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 12px 24px;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 12px 28px rgb(34 197 94 / 25%);
 `

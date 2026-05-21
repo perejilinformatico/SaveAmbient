@@ -63,6 +63,7 @@ const styled = {
   p: createStyledComponent('p'),
   section: createStyledComponent('section'),
   button: createStyledComponent('button'),
+  input: createStyledComponent('input'),
 }
 
 export default styled
